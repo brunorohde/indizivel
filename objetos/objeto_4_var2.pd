@@ -1,0 +1,27 @@
+#N canvas 204 262 800 768 12;
+#X obj 195 515 dac~;
+#X obj 259 494 metro 100;
+#X obj 259 515 tabwrite~ \$0-view;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-view 4800 float 2;
+#X coords 0 1 4800 -1 500 333 1 0 0;
+#X restore 146 216 graph;
+#X obj 195 494 hip~ 5;
+#X obj 195 395 phasor~ 0.125;
+#X obj 195 416 *~ 64000;
+#X obj 195 473 *~ 0.8;
+#X obj 526 474 loadbang;
+#X msg 526 495 \; pd dsp 1;
+#X obj 196 436 expr~ ($v1%1500<($v1/200%15))*0.15 \; ($v1%400/4)*($v1%($v1%($v1%12000))<($v1%($v1%7000)))*0.01
+;
+#X connect 1 0 2 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 7 0 4 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 8 0 1 0;
+#X connect 10 0 7 0;
+#X connect 10 1 7 0;

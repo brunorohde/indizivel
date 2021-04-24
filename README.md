@@ -5,3 +5,9 @@
 
 - objetos (2020->) - Coleção de geradores sonoros infinitos em Pd para prática de escuta eterna
 
+
+
+Instagram - @_indizivel
+
+
+
